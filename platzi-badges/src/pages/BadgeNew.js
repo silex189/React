@@ -1,22 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import './styles/BadgeNew.css';
-import header from '../images/badge-header.svg';
-import Badge from '../components/Badge';
+import "./styles/BadgeNew.css";
+import header from "../images/badge-header.svg";
+import Badge from "../components/Badge";
 import BadgeForm from '../components/BadgeForm';
+import Navbar from "../components/Navbar";
 
 class BadgeNew extends React.Component {
-  state = {
-    form: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      jobTitle: '',
-      twitter: '',
-    },
-  };
+  state = { form: {
+    firstName: '',
+    lastName: '',
+    jobTittle: 'Designer',
+    email: '',
+    twitter: '',
+  } };
 
   handleChange = e => {
+    // const nextForm = this.state.form;
+    // nextForm[e.target.name] = e.target.value;
+
+    // this.setState({
+    //   form: nextForm,
+    // })
     this.setState({
       form: {
         ...this.state.form,
@@ -27,7 +32,8 @@ class BadgeNew extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div>
+        <Navbar />
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={header} alt="Logo" />
         </div>
@@ -39,21 +45,21 @@ class BadgeNew extends React.Component {
                 firstName={this.state.form.firstName}
                 lastName={this.state.form.lastName}
                 twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
+                jobTittle={this.state.form.jobTittle}
                 email={this.state.form.email}
-                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
+                avatarUrl="https://pbs.twimg.com/profile_images/1035612483166384128/JhefRyxw_400x400.jpg"
               />
             </div>
 
             <div className="col-6">
-              <BadgeForm
-                onChange={this.handleChange}
-                formValues={this.state.form}
-              />
+                <BadgeForm 
+                onChange={this.handleChange} 
+                formValues={this.state.form} 
+                />
             </div>
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
