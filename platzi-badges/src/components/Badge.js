@@ -2,8 +2,7 @@ import React from 'react';
 
 import './styles/Badge.css';
 import confLogo from '../images/badge-header.svg';
-import Navbar from '../components/Navbar';
-import BadgesList from '../components/BadgesList';
+
 
 class Badge extends React.Component {
     render() {
