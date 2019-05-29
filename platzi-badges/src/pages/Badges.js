@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './styles/Badges.css';
 import confLogo from '../images/badge-header.svg'
 import Navbar from '../components/Navbar';
-import BadgeList from '../components/BadgeList';
+import BadgesList from '../components/BadgesList';
 
 class Badges extends React.Component {
   state = {
@@ -67,7 +67,7 @@ class Badges extends React.Component {
 
           <div className="Badge__List">
             <div className="Badges__container">
-              <BadgeList badges={this.state.data} />
+              <BadgesList badges={this.state.data} />
               
               
               
